@@ -17,17 +17,26 @@
 body {
   /* background: url("assets/bg.png"); */
   font-family: "Quicksand", serif;
-  margin: 0px 141px;
+
   color: var(--black);
 }
 
+section {
+  padding: 0px 141px;
+}
+
+@media screen and (max-width: 576px) {
+  section {
+    padding: 10px;
+  }
+}
 /* nav bar */
 
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 0;
+  padding: 20px 141px;
 }
 
 nav .logo {
@@ -71,13 +80,10 @@ nav .menu-icon {
     font-size: 14px;
   }
 
-  body {
-    margin: 0 20px;
-  }
-
   nav {
     border-bottom: 2px solid var(--yellow);
     background: none;
+    padding: 20px 0;
   }
 
   nav .logo h1,
@@ -100,6 +106,7 @@ header #hero {
   justify-content: space-between;
   align-items: center;
   gap: 3.125rem;
+  margin-bottom: 80px;
 }
 
 header #hero .text-content {
@@ -138,7 +145,7 @@ header #hero img {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 1.25rem;
+    gap: 3.125rem;
   }
 
   header #hero .text-content {
@@ -173,6 +180,7 @@ main {
 
 #curriculum header {
   font-size: 2.875rem;
+  font-weight: 700;
   text-align: center;
   margin-bottom: 80px;
 }
@@ -183,6 +191,23 @@ main {
   align-items: center;
   gap: 1.875rem;
   margin-bottom: 5rem;
+}
+
+#curriculum .card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  padding: 2.5rem;
+  background: linear-gradient(
+      180deg,
+      rgb(222, 245, 255),
+      rgba(255, 255, 255, 0) 40%
+    ),
+    rgb(255, 255, 255);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  gap: 2.5rem;
 }
 
 #curriculum .card-container .card:nth-child(2) {
@@ -201,23 +226,6 @@ main {
       rgba(255, 255, 255, 0) 40%
     ),
     rgb(255, 255, 255);
-}
-
-#curriculum .card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border-radius: 18px;
-  padding: 2.5rem;
-  background: linear-gradient(
-      180deg,
-      rgb(222, 245, 255),
-      rgba(255, 255, 255, 0) 40%
-    ),
-    rgb(255, 255, 255);
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  gap: 2.5rem;
 }
 
 #curriculum .title {
@@ -248,7 +256,7 @@ main {
 
 #curriculum .card:nth-child(3) .card-btn {
   color: var(--lavender);
-} 
+}
 
 #curriculum .arrow {
   display: flex;
@@ -256,7 +264,7 @@ main {
   align-items: center;
   gap: 0.625rem;
   width: 5%;
-  margin: auto;
+  margin: 80px auto;
 }
 
 #curriculum .arrow img {
@@ -267,8 +275,149 @@ main {
   #curriculum .card-container {
     flex-direction: column;
   }
-  
+
   #curriculum .arrow {
     display: none;
   }
 }
+
+/* Story section */
+
+#story {
+  background: linear-gradient(
+    0deg,
+    rgba(254, 163, 1, 0.3),
+    rgba(255, 255, 255, 0.3) 100%
+  );
+  padding-bottom: 80px;
+}
+
+#story header {
+  font-size: 2.875rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+#story #story-1 {
+  grid-area: story-1;
+}
+#story #story-2 {
+  grid-area: story-2;
+}
+
+#story #story-3 {
+  grid-area: story-3;
+}
+
+#story #story-4 {
+  grid-area: story-4;
+}
+
+#story #story-5 {
+  grid-area: story-5;
+}
+
+#story .card-container {
+  display: grid;
+  grid-template-areas:
+    "story-1 story-2 story-3"
+    "story-1 story-4 story-5";
+  gap: 2rem;
+}
+
+#story .card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 18px;
+  background-color: white;
+}
+
+#story .card:nth-child(1) .card-btn {
+  width: 30%;
+}
+
+#story .card .card-btn {
+  width: 50%;
+}
+
+#story .card .title {
+  font-size: 1rem;
+  font-weight: 700;
+  width: 80%;
+  padding: 10px 40px;
+}
+
+#story .card:nth-child(1) .title {
+  font-size: 1.5rem;
+  width: 100%;
+  margin-bottom: 70px;
+}
+
+#story .card:nth-child(1) .text {
+  width: 50%;
+  padding: 0 40px;
+}
+
+#story .card img {
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+}
+
+#story .card-btn {
+  top: -20px;
+  right: -40px;
+  position: relative;
+  border: none;
+  font-weight: 700;
+  padding: 20px 40px;
+  border-radius: 47.93px;
+  background: rgb(149, 178, 38);
+  color: white;
+}
+
+#story .card:nth-child(1) .card-btn {
+  background: rgb(60, 216, 232);
+}
+
+@media screen and (max-width: 576px) {
+  #story .card-container {
+    grid-template-areas:
+      "story-2 story-3"
+      "story-4 story-5";
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    padding: 20px;
+  }
+
+  #story .card:nth-child(1){
+    display: none;
+  }
+
+  #story .card{
+    width: 100%;
+  }
+  #story .card-btn {
+    top: -10px;
+    right: -20px;
+    position: relative;
+    border: none;
+    font-weight: 700;
+    padding: 5px 10px;
+    border-radius: 47.93px;
+    background: rgb(149, 178, 38);
+    color: white;
+    font-size: 10px;
+  }
+  #story .card img {
+    width: 100%;
+  }
+
+  #story .card .title {
+    padding: 0px 20px;
+    padding-bottom: 40px;
+  }
+
+}
+  
+
