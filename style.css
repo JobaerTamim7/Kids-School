@@ -15,7 +15,7 @@
 }
 
 body {
-  background: url("assets/bg.png");
+  /* background: url("assets/bg.png"); */
   font-family: "Quicksand", serif;
   margin: 0px 141px;
   color: var(--black);
@@ -67,9 +67,19 @@ nav .menu-icon{
 }
 
 @media screen and (max-width:576px) {
+  :root{
+    font-size: 14px;
+  }
+
   body{
     margin: 0 20px;
   }
+
+  nav{
+    border-bottom: 2px solid var(--yellow);
+    background: none;
+  }
+
   nav .logo h1,
   nav .link-container,
   nav .contact-btn {
@@ -79,5 +89,75 @@ nav .menu-icon{
   nav .menu-icon {
     display: block;
     width: 20px;
+  }
+}
+
+/* hero section */
+
+header #hero{
+  margin-top: 1.125rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header #hero .text-content{
+  width: 55%;
+} 
+
+header #hero .title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  text-align: left;
+}
+
+header #hero .text {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin: 1.25rem 0;
+}
+
+header #hero .enroll-btn{
+  color: white;
+  border: none;
+  border-radius: 12px;
+  background-color: var(--black);
+  font-size: 1.25rem;
+  font-weight: 700;
+  padding: 15px 40px;
+}
+
+header #hero img{
+  width: 100%;
+}
+
+@media screen and (max-width: 576px) {
+  header #hero {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  header #hero .text-content {
+    width: 100%;
+    text-align: center;
+    order: 3;
+  }
+
+  header #hero .title {
+    font-size: 2.5rem;
+    text-align: center;
+    order: 2;
+  }
+  
+  header #hero .enroll-btn {
+    order: 4;
+   
+  }
+
+  header #hero .img-container {
+    order: 1;
+    margin-bottom: .125rem;
+    width: 70%;
   }
 }
