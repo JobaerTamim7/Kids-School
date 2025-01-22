@@ -61,3 +61,23 @@ nav .contact-btn {
   font-size: 1.25rem;
   font-weight: 500;
 }
+
+nav .menu-icon{
+  display: none;
+}
+
+@media screen and (max-width:576px) {
+  body{
+    margin: 0 20px;
+  }
+  nav .logo h1,
+  nav .link-container,
+  nav .contact-btn {
+    display: none;
+  }
+
+  nav .menu-icon {
+    display: block;
+    width: 20px;
+  }
+}
